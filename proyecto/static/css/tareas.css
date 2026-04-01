@@ -1,0 +1,282 @@
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 20px; 
+    background-color: #f5f5f5;
+}
+
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header { 
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.header p {
+    margin: 10px 0 0 0;
+    opacity: 0.9;
+}
+
+.stats { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px; 
+    padding: 5px;
+    background-color: #f8f9fa;
+}
+
+.stat-card { 
+    background: white; 
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.stat-number { 
+    font-size: 2.5em; 
+    font-weight: bold; 
+    color: #007bff; 
+    margin-bottom: 10px;
+}
+
+.stat-card > div:last-child {
+    color: #6c757d !important;
+    font-size: 0.36em !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tareas-list { 
+    padding: 15px; 
+}
+
+.tareas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #007bff;
+}
+
+.tareas-header h2 {
+    margin: 0;
+    color: #333;
+}
+
+.tareas-header .filters {
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.tareas-header .filter-group {
+    margin-bottom: 0;
+}
+
+.tarea-item { 
+    border: 1px solid #e9ecef; 
+    border-radius: 8px;
+    padding: 20px; 
+    margin-bottom: 15px;
+    transition: all 0.2s ease;
+}
+
+.tarea-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transform: translateY(-1px);
+}
+
+.tarea-item:last-child { 
+    margin-bottom: 0; 
+}
+
+.tarea-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 15px; 
+}
+
+.tarea-title { 
+    font-weight: bold; 
+    font-size: 1.2em; 
+    color: #333;
+}
+
+.tarea-meta { 
+    color: #6c757d; 
+    font-size: 0.9em; 
+}
+
+.tarea-meta > span {
+    margin-right: 15px;
+}
+
+.completada { 
+    border-left: 4px solid #28a745;
+    background-color: #f8fff9;
+}
+
+.pendiente { 
+    border-left: 4px solid #dc3545;
+    background-color: #fff8f8;
+}
+
+.loading { 
+    text-align: center; 
+    padding: 40px; 
+    color: #6c757d;
+}
+
+.error { 
+    background: #f8d7da; 
+    color: #721c24; 
+    padding: 15px 20px; 
+    border-radius: 4px; 
+    margin-bottom: 20px; 
+    border-left: 4px solid #dc3545;
+}
+
+.btn { 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-primary { 
+    background: #007bff; 
+    color: white; 
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+}
+
+.btn-secondary { 
+    background: #6c757d; 
+    color: white; 
+}
+
+.filters { 
+    padding: 20px 30px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.filter-group { 
+    display: inline-block; 
+    margin-right: 20px; 
+    margin-bottom: 10px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #495057;
+}
+
+select, input { 
+    padding: 10px; 
+    border: 1px solid #ced4da; 
+    border-radius: 4px; 
+    font-size: 14px;
+    min-width: 200px;
+    transition: border-color 0.2s ease;
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        border-radius: 0;
+    }
+    
+    .header {
+        padding: 16px;
+    }
+    
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    .tareas-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .tareas-header .filters {
+        width: 100%;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #e9ecef;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .filters {
+        padding: 20px;
+    }
+    
+    .filter-group {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    select, input {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .tareas-list {
+        padding: 20px;
+    }
+    
+    .tarea-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .tarea-meta > span {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}

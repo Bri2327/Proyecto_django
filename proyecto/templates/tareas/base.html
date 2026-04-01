@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <link rel="stylesheet" href="{% static 'css/tareas.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Gestión de Tareas</h1>
+            <p>Lista de tareas del proyecto</p>
+        </header>
+
+        <div id="error-message" class="error" style="display: none;"></div>
+
+        <section class="stats" id="stats">
+            <div class="loading">Loading statistics...</div>
+        </section>
+
+        <main class="tareas-list">
+            <div class="tareas-header">
+                <h2>Lista de Tareas</h2>
+                <section class="filters">
+                    <div class="filter-group">
+                        <label for="persona-filter">Filtrar por persona:</label>
+                        <select id="persona-filter">
+                            <option value="">Todas las personas</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="estado-filter">Estado:</label>
+                        <select id="estado-filter">
+                            <option value="">Todos</option>
+                            <option value="completed">Completadas</option>
+                            <option value="pending">Pendientes</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" onclick="loadTasks()">Buscar</button>
+                    <button class="btn btn-secondary" onclick="resetFilters()">Limpiar</button>
+                </section>
+            </div>
+            <div id="tareas-container">
+                <div class="loading">Loading tasks...</div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{% static 'js/tareas-api.js' %}"></script>
+    <script src="{% static 'js/tareas-ui.js' %}"></script>
+</body>
+</html>
